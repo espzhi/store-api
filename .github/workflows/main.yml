@@ -34,12 +34,8 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      # 生成静态文件
-      - name: Build Vue
-        run: npm install && npm run build
-
       # 生成Plist文件
-      - name: Generate Plist
+      - name: Generate Manifest
         run: |
           python main.py
 
